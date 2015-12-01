@@ -64,3 +64,17 @@ class Matrix:
 
     def get_size(self):
         return self.m, self.n
+        
+    def set(self,i,j,value):
+        self.A[i][j]=value
+        
+    def __sub__(self, other):
+        P=self.A
+        B=self.A
+        U=other.A
+        if self.m==other.m and self.n==other.n:
+            for x in range(self.m):
+                for y in range(self.n):
+                    P[x][y]=B[x][y]-U[x][y]
+        self.P=P
+        return self.P
