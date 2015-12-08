@@ -66,6 +66,10 @@ class Matrix:
         return self.m, self.n
         
     def set(self,i,j,value):
+        if i>self.m or j>self.n or i<0 or j<0:
+            raise ValueError()
+        if type(value)!=int:
+            raise ValueError()
         self.A[i][j]=value
         
     def __sub__(self, other):
