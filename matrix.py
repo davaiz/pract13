@@ -78,4 +78,12 @@ class Matrix:
                     P[x][y]=B[x][y]-U[x][y]
         self.P=P
         return self.P
+    
+    def transpose(self):
+        b=[[0]*self.m for i in range(self.n)]
+        for i in range(self.n):
+            for j in range(self.m):
+                b[i][j]=self.A[j][i]
+        b=Matrix(b)
+        return b
 
